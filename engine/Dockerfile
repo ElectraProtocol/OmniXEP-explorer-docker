@@ -66,4 +66,7 @@ RUN mkdir /root/OmniXEP-engine/logs
 # add supervisor conf to launch nginx and api
 COPY supervisord.conf /etc/supervisor/conf.d/
 
+EXPOSE 16817-16818/tcp
+EXPOSE 8332-8333/tcp
+
 CMD ["/usr/bin/supervisord"]

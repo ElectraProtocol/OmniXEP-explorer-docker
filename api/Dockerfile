@@ -75,5 +75,6 @@ COPY config.py /home/ubuntu/OmniXEP-API/api/config.py
 COPY supervisord.conf /etc/supervisor/conf.d/
 
 EXPOSE 8080
-EXPOSE 8332-8333/tcp 16817-16818/tcp
+EXPOSE 16817-16818/tcp
+EXPOSE 8332-8333/tcp
 CMD ["/usr/bin/supervisord"]
