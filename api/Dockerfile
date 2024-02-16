@@ -22,27 +22,6 @@ RUN apt-key add /tmp/nginx_signing.key
 RUN sh -c "echo 'deb http://nginx.org/packages/mainline/ubuntu/ '$(lsb_release -cs)' nginx' > /etc/apt/sources.list.d/nginx.list"
 RUN apt-get update -y && apt-get -y install nginx
 
-# Move the daemon and cli to a new folder outside of the source to better keep files clean
-WORKDIR /root/
-
-# Create the config file for omnixep and apply bootstrap for syncing
-RUN mkdir /root/.omnixep/
-WORKDIR /root/.omnixep/
-RUN wget https://github.com/Jenova7/dev_bins/releases/download/dev_temp/omnixep.zip
-RUN unzip omnixep.zip
-RUN rm -rf omnixep.zip
-COPY omnixep.conf /root/.omnixep/
-
-# Now make a new folder for the daemon and cli
-WORKDIR /home/ubuntu/
-RUN mkdir /home/ubuntu/core/
-WORKDIR /home/ubuntu/core/
-
-RUN wget https://github.com/MotoAcidic/omnilayer-explorer-docker/releases/download/1.0.1/omnixepd
-RUN wget https://github.com/MotoAcidic/omnilayer-explorer-docker/releases/download/1.0.1/omnixep-cli
-RUN chmod -R 755 omnixepd omnixep-cli
-RUN ./omnixepd -daemon
-
 # Install omniapi
 WORKDIR /home/ubuntu/
 
@@ -75,6 +54,4 @@ COPY config.py /home/ubuntu/OmniXEP-API/api/config.py
 COPY supervisord.conf /etc/supervisor/conf.d/
 
 EXPOSE 8080
-EXPOSE 16817-16818/tcp
-EXPOSE 8332-8333/tcp
 CMD ["/usr/bin/supervisord"]
