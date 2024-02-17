@@ -55,7 +55,7 @@ else:
     sys.stdout.flush()
 
     #block with first MP transaction
-    firstMPtxBlock = 252317
+    firstMPtxBlock = 931865
     if config.TESTNET:
         firstMPtxBlock = 0
 
@@ -112,7 +112,7 @@ else:
     #get highest TxDBSerialNum (number of rows in the Transactions table)
     #22111443 btc tx's before block 252317
 
-    firstMPtxTx = 22111443
+    firstMPtxTx = 920206
     if config.TESTNET:
         firstMPtxTx = 0
 
@@ -211,11 +211,11 @@ else:
             expireCrowdsales(block_data['result']['time'], Protocol)
             #exodus address generates dev msc, sync our balance to match the generated balanace
             if config.TESTNET:
-                syncAddress('mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv', Protocol)
+                syncAddress('xWzvSGpYUPucJaodadUh3yzEmLJGvHUYsP', Protocol)
                 #upadate temp orderbook
                 #updateorderblob()
             else:
-                syncAddress('1EXoDusjGwvnjZUyKkxZ4UHEf77z6A5S4P', Protocol)
+                syncAddress('xWzvSGpYUPucJaodadUh3yzEmLJGvHUYsP', Protocol)
 
             #Also make sure we update the json data in SmartProperties table used by exchange view
             updateProperty(1,"Omni")
