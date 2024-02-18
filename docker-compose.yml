@@ -35,26 +35,26 @@ services:
     labels:
       com.datadoghq.ad.logs: '[{"source": "omni-docker", "service": "omni-explorer"}]'
 
-  omni_core:
-    build:
-      context: core
-      dockerfile: Dockerfile
-    depends_on:
-      - omni_engine
-    volumes:
-      - omnicore:/root/.omnixep
-    ports:
-      - "16818:18332"
-    networks:
-      - Omni_Network
-    command: 
-      -txindex
-      -rpcuser=USER_RPC
-      -rpcpassword=PASSWORD_RPC
-      -rpcallowip=172.0.0.0/8
-      -rpcport=16818
-    labels:
-      com.datadoghq.ad.logs: '[{"source": "omni-docker", "service": "omni-core"}]'
+  #omni_core:
+  #  build:
+  #    context: core
+  #    dockerfile: Dockerfile
+  #  depends_on:
+  #    - omni_engine
+  #  volumes:
+  #    - omnicore:/root/.omnixep
+  #  ports:
+  #    - "16818:18332"
+  #  networks:
+  #    - Omni_Network
+  #  command: 
+  #    -txindex
+  #    -rpcuser=USER_RPC
+  #    -rpcpassword=PASSWORD_RPC
+  #    -rpcallowip=172.0.0.0/8
+  #    -rpcport=16818
+  #  labels:
+  #    com.datadoghq.ad.logs: '[{"source": "omni-docker", "service": "omni-core"}]'
 
   omni_engine:
     build:

@@ -4,10 +4,11 @@ import math
 import sys
 import requests
 from rpcclient import *
-from mscutils import *
+from omniutils import *
 from sqltools import *
 from common import *
 
+Accepted=0
 
 def reparsetx_MP(txhash):
     printdebug(("Reparsing TX",txhash),4)
@@ -1034,6 +1035,8 @@ def syncAddress(Address, Protocol):
     baldata=getallbalancesforaddress_MP(Address)['result']
     DExSales=getactivedexsells_MP()['result']
 
+    global Accepted
+    
     for property in baldata:
       PropertyID=property['propertyid']
 
