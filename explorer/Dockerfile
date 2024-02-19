@@ -48,9 +48,9 @@ WORKDIR /home/ubuntu/OmniXEP-explorer
 
 # No need to copy files since they are already in the main repo
 
-COPY package.json /home/ubuntu/OmniXEP-explorer/package.json
-COPY constants.js /home/ubuntu/OmniXEP-explorer/app/containers/App/constants.js
-COPY addDevMiddlewares.js /home/ubuntu/OmniXEP-explorer/server/middlewares/addDevMiddlewares.js
+#COPY package.json /home/ubuntu/OmniXEP-explorer/package.json
+#COPY constants.js /home/ubuntu/OmniXEP-explorer/app/containers/App/constants.js
+#COPY addDevMiddlewares.js /home/ubuntu/OmniXEP-explorer/server/middlewares/addDevMiddlewares.js
 
 RUN npm install
 #RUN npm start

@@ -34,8 +34,8 @@ export const FTC_FIRST_BLOCK = 3457508;
 export const LTC_FIRST_BLOCK = 2093636;
 export const FEATURE_ACTIVATION_TYPE_INT = 65534;
 export const TXS_CLASS_AB = 'txs-class-a-b';
-export const TXCLASSAB_ADDRESS_MAINNET = '1EXoDusjGwvnjZUyKkxZ4UHEf77z6A5S4P';
-export const TXCLASSAB_ADDRESS_TESTNET = 'mpexoDuSkGGqvqrkrjiFng38QPkJQVFyqv';
+export const TXCLASSAB_ADDRESS_MAINNET = 'xWzvSGpYUPucJaodadUh3yzEmLJGvHUYsP';
+export const TXCLASSAB_ADDRESS_TESTNET = 'xWzvSGpYUPucJaodadUh3yzEmLJGvHUYsP';
 
 const hostName = window.location.hostname;
 
@@ -44,10 +44,10 @@ let apiUrlBase;
 if (/localhost/i.test(hostName)) {
   apiUrlBase = 'https://localhost:4005/v1';
 } else {
-    if (hostName.indexOf('51.195.40.45') > -1) {
-      apiUrlBase = '51.195.40.45/v1'
+    if (hostName.indexOf('omnixep.xepdev.com') > -1) {
+        apiUrlBase = 'omnixep.xepdev.com/v1'
   } else {
-        apiUrlBase = '51.195.40.45/v1'
+        apiUrlBase = 'omnixep.xepdev.com/v1'
   }
 }
 

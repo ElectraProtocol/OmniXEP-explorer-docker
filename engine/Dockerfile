@@ -55,7 +55,7 @@ COPY config.py /root/OmniXEP-engine/config.py
 COPY installOmniEngineCronJob.py /root/OmniXEP-engine/install/installOmniEngineCronJob.py
 
 # Patch OmniXEP-engine to force stdout print and use other configuration for testnet
-COPY omniEngine.py /root/OmniXEP-engine/omniEngine.py
+#COPY omniEngine.py /root/OmniXEP-engine/omniEngine.py
 #COPY sql.py /root/OmniXEP-engine/sql.py
 #COPY db /flyway/sql/
 
