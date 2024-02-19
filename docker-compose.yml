@@ -6,12 +6,12 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - omni_postgres
-      - omni_core
+      #- omni_core
       - omni_engine
       - omni_redis
     links:
       - omni_postgres
-      - omni_core
+      #- omni_core
       - omni_redis
     networks:
       - Omni_Network
@@ -62,11 +62,11 @@ services:
       dockerfile: Dockerfile
     depends_on:
       - omni_postgres
-      - omni_core
+      #- omni_core
       - omni_redis
     links:
       - omni_postgres
-      - omni_core
+      #- omni_core
       - omni_redis
     networks:
       - Omni_Network
