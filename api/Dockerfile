@@ -36,6 +36,7 @@ RUN cp  /home/ubuntu/OmniXEP-API/etc/nginx/sites-available/default /etc/nginx/co
 
 #Setup OmniXEP-API configs
 COPY sql.conf /root/.omni/
+COPY omnixep.conf /root/.omnixep/
 COPY config.py /home/ubuntu/OmniXEP-API/api/config.py
 
 # Patch rate limit to be able to disable them
@@ -53,5 +54,5 @@ COPY config.py /home/ubuntu/OmniXEP-API/api/config.py
 # Add supervisor conf to launch nginx and api
 COPY supervisord.conf /etc/supervisor/conf.d/
 
-EXPOSE 8080
+EXPOSE 80:8080
 CMD ["/usr/bin/supervisord"]
